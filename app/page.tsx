@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen min-w-screen">
         <div  className="absolute top-0 left-0 w-full z-10">
-          <Header />
+          <Header color={"black"} opacity={60}/>
           </div>
       <AnimatedBackground/>
       <div className="flex h-screen w-screen justify-center items-center  ">

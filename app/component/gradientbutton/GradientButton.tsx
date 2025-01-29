@@ -1,4 +1,4 @@
-"use cl"
+"use client"
 import React from 'react';
 import Typewriter from '../typewriter/Typewriter';
 

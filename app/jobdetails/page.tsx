@@ -19,7 +19,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen min-w-screen  bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] text-white flex flex-col items-center justify-center p-6">
       {/* Job Details and Tech Stack Section */}
-      <div className="p-8 w-full max-w-3xl bg-neutral-800 bg-opacity-50 rounded-lg shadow-lg mt-16">
+      <div className="p-8 w-2/5 bg-neutral-800 bg-opacity-30 rounded-lg shadow-lg mt-16">
         <h2 className="text-3xl font-semibold mb-6 text-center">
           Submit Job Details
         </h2>
@@ -55,7 +55,7 @@ export default function Dashboard() {
           </div>
           <div
             onClick={handleFileUpload}
-            className="w-full px-6 py-3 bg-green-600 rounded-md hover:bg-green-500 text-lg font-semibold"
+            className="flex items-center hover:cursor-pointer justify-center py-2 bg-green-600 rounded-md hover:bg-green-500 text-lg font-semibold"
           >
            
           <Link href="/prepare">Submit</Link>
