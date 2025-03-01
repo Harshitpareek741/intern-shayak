@@ -5,6 +5,17 @@ import ProgressBar from "../component/progressbar/page";
 import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa6";
 
 // Check for browser support for SpeechRecognition
+declare global {
+  interface Window {
+  
+    SpeechRecognition: typeof SpeechRecognition ;
+    webkitSpeechRecognition: typeof SpeechRecognition;
+  }
+}
+
+type SpeechRecognition = typeof window.SpeechRecognition | typeof window.webkitSpeechRecognition;
+
+
 
 export default function InterviewPage() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -12,9 +23,7 @@ export default function InterviewPage() {
   const [confidence, setConfidence] = useState<number | null>(null);
   const [nervousness, setNervousness] = useState<number | null>(null);
   const [isRecording, setIsRecording] = useState<boolean>(false);
-  const [recognition, setRecognition] = useState<SpeechRecognition | null>(
-    null
-  );
+  const [recognition, setRecognition] = useState<SpeechRecognition | null>(null);
   const [timer, setTimer] = useState<number>(45 * 60); // 45 minutes in seconds
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
@@ -182,10 +191,10 @@ export default function InterviewPage() {
 
           <div className="flex flex-col w-screen items-center">
             <div className="text-sm flex flex-row w-1/5 gap-3">
-              <strong>Confidence:</strong> <ProgressBar percentage={confidence} color="red" />
+              <strong>Confidence:</strong> <ProgressBar percentage={confidence || 23} color="red" />
             </div>
             <div className="text-sm flex flex-row w-1/5 gap-3">
-              <strong>Nervousness:</strong> <ProgressBar percentage={nervousness} color="green" />
+              <strong>Nervousness:</strong> <ProgressBar percentage={nervousness || 34} color="green"  />
             </div>
           </div>
 

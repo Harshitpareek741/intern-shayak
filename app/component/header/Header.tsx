@@ -1,13 +1,21 @@
 "use client"
-
+import image from '@/public/logo.webp'
+import Image from 'next/image';
 import React from "react";
 
-const Header: React.FC = () => {
+interface HeaderProp {
+  color?: string;  // Optional prop
+  opacity?: string;  // Optional prop
+}
+
+const Header: React.FC<HeaderProp> = ({ color = "slate-950", opacity = "5" }) => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-slate-500 z-10 dark:bg-opacity-20 rounded-full mt-5 ">
+    <nav className={`bg-white border-gray-200 dark:bg-${color} z-10 dark:bg-opacity-${opacity} rounded-full mt-5`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="#" className="h-8" alt="Logo" />
+          <div className="flex rounded-full overflow-hidden">
+            <Image src={image} height={40} width={40} alt="na" />
+          </div>
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Interview.Ai</span>
         </a>
         <button
@@ -35,10 +43,10 @@ const Header: React.FC = () => {
           </svg>
         </button>
         <div
-          className="hidden w-full md:block md:w-auto"
+          className="hidden w-full md:block md:w-auto text-2xl font-normal"
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 dark:bg-opacity-20 bg-opacity-20 dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-opacity-20 bg-opacity-20 dark:border-gray-700">
             <li>
               <a
                 href="#"

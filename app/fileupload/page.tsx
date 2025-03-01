@@ -20,7 +20,7 @@ const FileUpload: React.FC = () => {
   };
 
   return (
-    <div className=" bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-gray-900  flex justify-center items-center h-screen">
+    <div className="  bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-neutral-950  flex justify-center items-center h-screen">
       <div className="max-w-md mx-auto p-6 bg-white dark:bg-gray-800 rounded-md shadow-lg">
         <h2 className="text-3xl font-semibold text-center mb-6 dark:text-white">File Upload</h2>
         <div className="relative border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md px-6 py-8 text-center">

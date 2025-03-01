@@ -76,10 +76,10 @@ export default function InterviewPage() {
 
           {/* Confidence and Nervousness Display */}
           <div className="text-center">
-            <p className="text-xl">
+            <div className="text-xl">
               <strong>Hello Harshit</strong> 
               <div className="text-sm">Start your interview......</div>
-            </p>
+            </div>
           </div>
 
           {/* Start/Stop Buttons for Simulated Integration */}
